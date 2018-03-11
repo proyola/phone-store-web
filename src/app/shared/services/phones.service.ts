@@ -25,6 +25,18 @@ export class PhonesService {
       .catch(error => this.handleError(error));
   }
 
+  edit(phone: Phone): Observable<Phone> {
+    return this.http.put(`${PhonesService.PHONES_API}/${phone.id}`, JSON.stringify(phone), PhonesService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  delete(id: string): Observable<void> {
+    return this.http.delete(`${PhonesService.PHONES_API}/${id}`, PhonesService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
   private handleError(error: Response): Observable<any> {
     if (!environment.production) {
       console.error(`Phone Service error: ${error.json()}`);

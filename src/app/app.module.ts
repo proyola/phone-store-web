@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 import { PhoneListComponent } from './components/phone/phone-list/phone-list.component';
 import { PhonesService } from './shared/services/phones.service';
 import { routes } from './app.routes';
+import { PhoneItemComponent } from './components/phone/phone-item/phone-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhoneListComponent
+    PhoneListComponent,
+    PhoneItemComponent
   ],
   imports: [
     BrowserModule,
