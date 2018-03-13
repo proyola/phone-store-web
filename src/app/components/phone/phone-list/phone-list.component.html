@@ -1,4 +1,7 @@
 <h1> Phone list </h1>
+
+<p>current user: <{{ user.email }}> </p>
+
 <div>
   <div *ngFor="let phone of phones" class="phone">
     <img [src]="phone.image" />
